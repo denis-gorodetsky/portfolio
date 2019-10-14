@@ -1,0 +1,30 @@
+.about {    
+    padding-bottom: 150px;
+
+
+    @include desktop {
+        padding-bottom: 150px;
+    }  
+
+    @include tablets {
+        margin-bottom: 142px;
+    }  
+
+    @include phones-small {
+         margin-bottom: 105px;
+    }
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 10%;  
+
+    @include desktop {
+        padding: 0; 
+    }  
+
+    @include phones-small {
+        flex-direction: column;
+    }
+}
