@@ -34,21 +34,13 @@ body {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
-  // width: 1490px;
-
-  @include desktop {
-    //width: 95%; 
-    //max-width: 1080PX;
-  }
 
   @include tablets {
     width: 90%;
-    //max-width: 688PX;
   }
 
   @include phones-small {
     width: 80%;
-    //max-width: 260PX;
   }
 }
 
@@ -163,11 +155,8 @@ h3 {
   height: 100%;
 
   &--home {
-    background: url("/src/images/content/bg/mountain-baloon.jpg");
-    // background-position-y: -150px;
-    @include tablets {
-      background-image: url("../images/content/bg/mountain-baloon.jpg");
-    }
+    background-image: url("../images/content/bg/mountain-baloon.jpg");
+    background-position-x: -170px;
   }
 
   &--two {

@@ -94,8 +94,37 @@ html(lang="ru")
               .useful__title
                 .title
                   h3.title-elem Чем я могу быть #[span.span-block]полезен вам
-                .useful__description Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .useful__description 
+                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
+                .useful__section
+                  .useful__section-left
+                    .useful__img
+                      +image('content/backpack.png', 'useful__pic','Рюкзак')
+
+                  .useful__section-right
+                    ul.user-skills
+                      -
+                        var skills = [
+                          ['Front-end', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js']],
+                          ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
+                        ]
+                      each item in skills
+                        li.user-skills__item.skills-row
+                          h3.section-title.skills-row__title #{item[0]}
+                          ul.skills-row__list
+                            each skill in item[1]
+                              li.skills-row__item
+                                .skill
+                                  .skill__shape
+                                    svg(viewBox="0 0 100 100" style="fill: transparent;" )
+                                      circle(cx="50" cy="50" r="42" fill="transparent" stroke='#e9e9e9' stroke-width="5px")
+                                      circle(cx="50" cy="50" r="42" stroke="url(#gradient)" transform="rotate(180 50 50)" stroke-dasharray="200" :stroke-dashoffset="skill.percent" stroke-width="10px")
+                                      defs
+                                        linearGradient(id="gradient" x1="0%" y1="0%" x2="0%" y2="100%")
+                                          stop(offset="0%" stop-color="#ad00ed")
+                                          stop(offset="100%" stop-color="#5500f2")
+                                    .skill__title #{skill}
 
           section.work
             .container
@@ -108,11 +137,12 @@ html(lang="ru")
                     +image('content/work/preview.jpg', 'slider__preview-image','Превью')
                     .slider__workimages
                       ul.slider__list
-                        - var previews = ['slider-image1','slider-image2','slider-image3','slider-image4'];
-                        each prev in previews
-                          li.slider__item
+                        - var previews = ['content/work/slider-image1.jpg', 'content/work/slider-image2.jpg', 'content/work/slider-image3.jpg','content/work/slider-image4.jpg']
+                        - for (var i = 0; i < previews.length; i++)
+                          li.slider__item(class=`${i === 3 ? 'slider__item--active' : ''}`)
                             .slider__image
-                              +image(`content/work/${prev}.jpg`, 'slider__image-icon','Работа')
+                              +image(`${previews[i]}`, 'slider__image-icon','Работа')
+
                   .slider__navigation
                     .navigation
                       button(type="button").navigation__button.navigation__button--up.no-active
@@ -179,25 +209,26 @@ html(lang="ru")
 
           section.feedback
             .container
-              .title
-                h2.title__elem Связаться со мной
-              form.form
-                .form__wrapper
-                  .form__row
-                    label(data-text="Введите ваше имя").form__elem
-                      .form__elem-container.form__elem-container--user
-                        input(type="text" placeholder="Ковальчук Дмитрий").form__elem-input
-                    label(data-text="Введите ваш email").form__elem
-                      .form__elem-container.form__elem-container--envelope
-                        input(type="text" placeholder="loftschool@study.com").form__elem-input
-                  .form__row.form__row--textarea
-                    lavel(data-text="Сообщение к письму").form__elem
-                      .form__elem-container.form__elem-container--message
-                        textarea(type="textarea" placeholder="Требуется ваша помощь в создании сайта.\nИнтересуют сроки и цена вопроса").form__elem-input.form__elem-input--textarea
-                  .form__row
-                    lavel.form__elem.form__elem--button
-                      button(type="submit").form__elem-button Отправить
-                      
+              h2.section-title.feedback__title Связаться со мной
+              .feedback__form
+                form.main-form                
+                  .main-form__row
+                    .main-form__row-item                  
+                      input(type="text" name="feed-name" id="feed-name" required class="main-form__inp")
+                      +icon("user", "main-form__icon")
+                      label(for="feed-name" class="main-form__label" ) Введите ваше имя
+                    .main-form__row-item                    
+                      input(type="text" name="feed-email" id="feed-email" required class="main-form__inp")
+                      +icon("envelope", "main-form__icon")
+                      label(for="feed-email" class="main-form__label") Введите ваш email
+                  .main-form__row
+                    .main-form__row-item.main-form__row-item--textarea                  
+                      textarea(name="feed-text" id="feed-text" required class="main-form__textarea")
+                      +icon("message", "main-form__icon")
+                      label(for="feed-text" class="main-form__label") Сообщение к письму
+                  .main-form__row                    
+                    input(type="submit" id="feed-submit" class="form__submuit" value="Отправить")
+
         footer.footer
           .container.footer-container
             .footer__left

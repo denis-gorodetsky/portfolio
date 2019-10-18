@@ -79,11 +79,9 @@
     position: absolute;
     
     bottom: 0;
-    right: 0;  
+    right: 0;
 
-    @include desktop { 
-        height: 84%;
-        overflow: hidden;
+    @include desktop {
         top: 16%;
     }   
 
@@ -93,9 +91,13 @@
 }
 
 .slider__item {
+    position: relative;
+    box-sizing: border-box;
     cursor: pointer;
-    &.active {
-        border: 3px solid $slider-active-color;
+
+    &--active {
+        z-index: 100;
+        outline: 3px solid $slider-active-color;
     }
 }
 
@@ -123,7 +125,7 @@
     &:hover {
         &:before {
             background-color: rgba($active-menu-color,.4);  
-        }     
+        }
     }
 }
 
