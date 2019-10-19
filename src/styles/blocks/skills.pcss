@@ -1,0 +1,44 @@
+.skills-row__title {
+  font-size: 24px;
+  margin-left: 5px;
+  margin-bottom: 25px;
+}
+
+.skills-row__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills-row__item {
+  margin-right: 15px;
+}
+
+.skills-row__item:last-child {
+  margin-right: 0;
+}
+
+.skill__shape {
+  position: relative;
+  width: 158px;
+  height: 158px;
+  @include tablets {
+    width: 135px;
+    height: 135px;
+  }
+}
+
+.skill__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 18px;
+  color: rgba(#000, .4);
+  text-align: center;
+  line-height: 30px;
+
+  @include phones {
+    font-size: 16px;
+  }
+}

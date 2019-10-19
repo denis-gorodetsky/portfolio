@@ -1,10 +1,11 @@
 html {
   @include desktop {
-    font-size: 15px;
+    //font-size: 15px;
+    font-size: 16px;
   }
-  @include tablets {
+  /* @include tablets {
     font-size: 14px;
-  }
+  } */
 }
 body,
 html {
@@ -24,16 +25,22 @@ body {
   overflow: hidden;
   min-height: 100%;
   position: relative;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
-  // width: 1490px;
 
-  @include phones {
-    width: 85%;
+  @include tablets {
+    width: 90%;
+  }
+
+  @include phones-small {
+    width: 80%;
   }
 }
 
@@ -63,7 +70,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
+  //font-weight: normal;
   margin: 0;
 }
 
@@ -80,10 +87,97 @@ button[type="button"] {
 a {
   color: inherit;
   cursor: pointer;
+  text-decoration: none;
 }
 
 img {
   display: block;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+//-------------
+//------my-----
+//-------------
+
+h1 {
+  font-size: 72px;
+  font-weight: $extra-bold;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: $extra-bold;
+
+  @include tablets {
+    font-size: 30px;
+  }   
+
+  @include phones-small {
+    font-size: 30px;
+  } 
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: $bold;
+
+  @include phones-small {
+    font-size: 24px;
+  } 
+}
+
+.maincontent,
+.footer {    
+  flex: 0 0 auto;
+}
+
+.maincontent {    
+  flex: 1 0 auto;
+
+  z-index: 10;
+
+  // margin-bottom: 375px;
+  background-color: $white-color;
+
+  @include tablets { 
+    margin-bottom: 0;
+  }
+}
+
+
+.wrappersections {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+
+  &--home {
+    background-image: url("../images/content/bg/mountain-baloon.jpg");
+    background-position-x: -170px;
+  }
+
+  &--two {
+    margin-bottom: 100px;
+  }
+
+  &--end {
+    //@include tablets {
+      background-image: url("../images/content/bg/budda.jpg");
+      // background-position-y: 150px;
+      margin-bottom: 150px;
+    //}
+
+    & .container {
+        @include desktop { 
+            width: 91%;
+        }  
+    }   
+  }
+}
+
+.span-block {
+  display: block;
 }
