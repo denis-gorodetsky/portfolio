@@ -104,11 +104,12 @@ html(lang="ru")
         .wrappersections.wrappersections--two
           section.useful
             .container
-              .useful__title
-                .title
-                  h3.title-elem Чем я могу быть #[span.span-block]полезен вам
-                .useful__description 
-                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .useful__text
+                .useful__title
+                  .title
+                    h3.title-elem Чем я могу быть #[span.span-block]полезен вам
+                  .useful__description 
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
               .skills
                 .skills__content                    
                   .svg__lineargradient
@@ -122,35 +123,6 @@ html(lang="ru")
                           stop(offset="0%" stop-color=`${begin}`)
                           stop(offset="100%" stop-color=`${end}`)
                   #skills-component
-
-                //- .useful__section
-                //-   .useful__section-left
-                //-     .useful__img
-                //-       +image('content/backpack.png', 'useful__pic','Рюкзак')
-
-                //-   .useful__section-right
-                //-     ul.user-skills
-                //-       -
-                //-         var skills = [
-                //-           ['Front-end', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js']],
-                //-           ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
-                //-         ]
-                //-       each item in skills
-                //-         li.user-skills__item.skills-row
-                //-           h3.section-title.skills-row__title #{item[0]}
-                //-           ul.skills-row__list
-                //-             each skill in item[1]
-                //-               li.skills-row__item
-                //-                 .skill
-                //-                   .skill__shape
-                //-                     svg(viewBox="0 0 100 100" style="fill: transparent;" )
-                //-                       circle(cx="50" cy="50" r="42" fill="transparent" stroke='#e9e9e9' stroke-width="5px")
-                //-                       circle(cx="50" cy="50" r="42" stroke="url(#gradient)" transform="rotate(180 50 50)" stroke-dasharray="200" :stroke-dashoffset="skill.percent" stroke-width="10px")
-                //-                       defs
-                //-                         linearGradient(id="gradient" x1="0%" y1="0%" x2="0%" y2="100%")
-                //-                           stop(offset="0%" stop-color="#ad00ed")
-                //-                           stop(offset="100%" stop-color="#5500f2")
-                //-                     .skill__title #{skill}
 
           section.work
             .container
@@ -215,31 +187,24 @@ html(lang="ru")
                         +icon('arrow-down', 'navigation__button-icon')
                 .review__block
                   .review__content
-                    flickity(ref="flickity" :options="flickityOptions").review__list
-                      -
-                        var reviews = [
-                          ['Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!', 'Ковальчук Дмитрий', 'Основатель Loftschool'],
-                          ['Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах', 'Владимир Сабанцев', 'Преподаватель'],
-                          ['Этот код выдержит любые испытания', 'Владимир Сабанцев', 'Преподаватель']
-                        ], i = 1;
-                      each review in reviews
-                        .review__item.carousel-cell
-                          .review__description
-                            .review__text #{review[0]}
-                            .review__autor
-                              .avatar.avatar--review
-                                .avatar__block
-                                  +image(`content/reviews/review${i++}.jpg`, 'avatar__image','Аватар')
-                              .review__about
-                                .review__name #{review[1]}
-                                .review__profession #{review[2]}
+                    flickity(ref="flickity" :options="flickityOptions")
+                      .review__item.carousel-cell(v-for="item in reviews", :key="item.id")
+                        .review__description
+                          .review__text {{ item.text }}
+                          .review__autor
+                            .avatar.avatar--review
+                              .avatar__block
+                                img(:src="item.pic", alt="autor-photo" class="avatar__image")
+                            .review__about
+                              .review__name {{ item.name }}
+                              .review__profession {{ item.pos }}
 
           section.feedback
             .container
               h2.section-title.feedback__title Связаться со мной
               .feedback__form
                 form.main-form
-                  .main-form__row
+                  .main-form__row.main-form__row--small
                     .main-form__row-item
                       input(type="text" name="feed-name" id="feed-name" required class="main-form__inp")
                       +icon("user", "main-form__icon")
