@@ -1,41 +1,55 @@
-.menu__list {
-    display: flex;
+.menu {
+	display: flex;
+	flex: 1;
 }
 
-.menu__item {    
+.menu__list {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1;
+	justify-content: space-around;
 
-    &:last-child {
-        margin-right: 0;
-    }    
+	@include tablets {
+		justify-content: flex-start;
+	}
+}
+
+.menu__item {
+
+	@include tablets {
+		justify-content: flex-start;
+		padding-right: 8px;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
 }
 
 .menu__link {
-    display: inline-block;
+	display: inline-block;
+	padding: 40px 0px;
+	border-bottom: 3px solid transparent;
+	transition: border-bottom-color .2s;
 
-    padding: 40px 32px;
+	&:hover {
+		color: rgba($active-menu-color, 1);
+		font-weight: $bold;
+		border-bottom-color: $active-menu-color;
+	}
 
-    border-bottom: 3px solid transparent;
-    transition: border-bottom-color .2s;
+	&:after {
+		//костыль
+		display: block;
+		content: attr(title);
+		font-weight: bold;
+		height: 0;
+		overflow: hidden;
+		visibility: hidden;
+	}
 
-    &:hover {
-        color: rgba($active-menu-color,1);
-        font-weight: $bold;
-        border-bottom-color: $active-menu-color;
-    } 
-
-    &:after {  //костыль
-        display: block;
-        content: attr(title);
-        font-weight: bold;
-        height: 0;
-        overflow: hidden;
-        visibility: hidden;        
-    }
-
-    @include desktop { 
-        white-space: nowrap;
-        padding: 40px 29px;
-    }    
+	@include desktop {
+		white-space: nowrap;
+		padding: 40px 0;
+	}
 }
-
-

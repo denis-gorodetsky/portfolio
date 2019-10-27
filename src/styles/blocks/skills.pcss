@@ -132,12 +132,12 @@
 .skills__tech-list{
     display: flex;
 
-    @include tablets {         
+    @include tablets {   
+        flex-wrap: wrap;
         justify-content: center;
     }
 
     @include phones-small {         
-        flex-wrap: wrap;
         width: 102%;
     }
 }
