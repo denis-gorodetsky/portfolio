@@ -1,272 +1,278 @@
 .footer {
-    display: flex;
-    background-color: $footer-color;
+	display: flex;
+	background-color: $footer-color;
 
-    @include tablets { 
-        position: initial;
-    }
+	@include tablets {
+		position: initial;
+	}
 }
 
-.footer-container {    
-    color:$white-color;
+.footer-container {
+	color: $white-color;
 
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 
-    padding: 4.7% 0;
+	padding: 4.7% 0;
 
-    @include desktop { 
-        padding: 7% 0;
-        width: 90%;
-    }   
+	@include desktop {
+		padding: 7% 0;
+		width: 90%;
+	}
 
-    @include tablets { 
-        padding: 8% 0;
-    }   
+	@include tablets {
+		padding: 8% 0;
+	}
 
-    @include phones-small { 
-        padding: 21% 0;
-        flex-direction: column;
-        width: 80%;
-    }
+	@include phones-small {
+		padding: 21% 0;
+		flex-direction: column;
+		width: 80%;
+	}
 }
 
 .footer__left {
-    width: 30%;
+	width: 30%;
 
-    @include desktop { 
-        width: 13%;
-    }   
-    @include desktop { 
-        width: 25%;
-    } 
-    @include phones-small {  
-        width: 100%;
-        margin-bottom: 13%;;
-    } 
+	@include desktop {
+		width: 13%;
+	}
+
+	@include desktop {
+		width: 25%;
+	}
+
+	@include phones-small {
+		width: 100%;
+		margin-bottom: 13%;
+		;
+	}
 }
 
 .footer__right {
-    width: 66%;
+	width: 66%;
 
-    @include desktop { 
-        width: 74%;
-    }   
+	@include desktop {
+		width: 74%;
+	}
 
-    @include tablets { 
-        width: 65%;
-    }   
+	@include tablets {
+		width: 65%;
+	}
 
-    @include phones-small { 
-        width: 100%;
-    }   
-} 
- 
+	@include phones-small {
+		width: 100%;
+	}
+}
+
 .footer__hero {
-    .hero__name {
-        margin-bottom: 14%; 
+	.hero__name {
+		margin-bottom: 14%;
 
-        @include desktop { 
-            margin-bottom: 6%; 
-        }
+		@include desktop {
+			margin-bottom: 6%;
+		}
 
-        @include phones-small { 
-           white-space: nowrap; 
-           margin-bottom: 1%;
-        }
-    }
-    
-    .hero__name-elem {
-        font-size: 18px;
-        line-height: 30px;
-        text-transform: uppercase;
-        text-align: left;                
-    }
+		@include phones-small {
+			white-space: nowrap;
+			margin-bottom: 1%;
+		}
+	}
 
-    .hero__profession-elem {
-        color: rgba($white-color, 0.153);
-        text-align: left;
-        line-height: 30px;
-        padding: 0;
-        margin-bottom: 0;
+	.hero__name-elem {
+		font-size: 18px;
+		line-height: 30px;
+		text-transform: uppercase;
+		text-align: left;
+	}
 
-        @include tablets { 
-            font-size: 14px; 
-        }
-        @include phones-small { 
-            white-space: nowrap; 
-        }
-        & span {
-            @include phones-small { 
-                display: inline;
-            }
-        }        
-    }
+	.hero__profession-elem {
+		color: rgba($white-color, 0.153);
+		text-align: left;
+		line-height: 30px;
+		padding: 0;
+		margin-bottom: 0;
 
-    flex-basis: 40%;
+		@include tablets {
+			font-size: 14px;
+		}
+
+		@include phones-small {
+			white-space: nowrap;
+		}
+
+		& span {
+			@include phones-small {
+				display: inline;
+			}
+		}
+	}
+
+	flex-basis: 40%;
 }
 
 .footer__navigation {
-    margin-bottom: 1%;
+	margin-bottom: 1%;
 
-    .menu__list {
-        @include tablets { 
-            flex-wrap: wrap;
-        } 
-    }
+	.menu__list {
+		@include tablets {
+			flex-wrap: wrap;
+		}
+	}
 
-    .menu__item {
+	.menu__item {
 
-        .menu__link {
-            padding: 2.5rem 1.7rem;
-            padding-top: 0;
+		.menu__link {
 
-            @include desktop { 
-                padding: 0 27px 40px;
-            }   
+			@include desktop {
+				padding: 0 0 40px;
+			}
 
-            @include tablets { 
-                padding: 0 51px 12px 0;
-                font-size: 14px;
-            } 
+			@include tablets {
+				padding: 10px 0;
+				font-size: 14px;
+			}
 
-            @include phones-small {  
-                padding-bottom: 22px;
-                padding-right: 65px;
-            } 
-        }
+			@include phones-small {
+				padding-bottom: 22px;
+				padding-right: 65px;
+			}
+		}
 
-        &:first-child .menu__link{
-            padding-left: 0;
-        }
+		&:first-child .menu__link {
+			padding-left: 0;
+		}
 
-        &:last-child .menu__link{
-            padding-right: 0;
-        }
+		&:last-child .menu__link {
+			padding-right: 0;
+		}
 
-        &:hover .menu__link {
-            border-bottom-color: transparent;
-        }
-    }
+		&:hover .menu__link {
+			border-bottom-color: transparent;
+		}
+	}
 
-    @include tablets { 
-        margin-bottom: 8%;
-    } 
+	@include tablets {
+		margin-bottom: 8%;
+	}
 
-    @include phones-small {  
-        margin-bottom: 3%;
-    } 
+	@include phones-small {
+		margin-bottom: 3%;
+	}
 }
 
 .footer__thinks {
-    display: flex; 
+	display: flex;
 
-    @include tablets { 
-        flex-direction: column;
-    }   
+	@include tablets {
+		flex-direction: column;
+	}
 }
 
 .footer__mythink {
-    flex: 1;
-    margin-right: 36px;
+	flex: 1;
+	margin-right: 36px;
 
-    @include desktop { 
-        flex: 0.8;
-        margin-right: 36px;
-    }   
+	@include desktop {
+		flex: 0.8;
+		margin-right: 36px;
+	}
 
-    @include tablets {
-        flex: 0;
-        margin-right: 0;
-        margin-bottom: 10%;
-    }
+	@include tablets {
+		flex: 0;
+		margin-right: 0;
+		margin-bottom: 10%;
+	}
 
-    @include phones-small {  
-        margin-bottom: 17%;
-    } 
+	@include phones-small {
+		margin-bottom: 17%;
+	}
 }
 
 .footer__text {
-    font-size: 16px;
-    color: rgba($white-color, 0.3);
-    line-height: 30px;
-    margin-bottom: 9%;
+	font-size: 16px;
+	color: rgba($white-color, 0.3);
+	line-height: 30px;
+	margin-bottom: 9%;
 
-    @include desktop { 
-        margin-bottom: 5%;
-    }   
+	@include desktop {
+		margin-bottom: 5%;
+	}
 
-    @include tablets {         
-        font-size: 14px;
-        margin-bottom: 2%;
-    } 
-    
-    @include phones-small {  
-        line-height: 24px;
-        margin-bottom: 19px;
-        & span {
-            display: inline;
-        }
-    } 
+	@include tablets {
+		font-size: 14px;
+		margin-bottom: 2%;
+	}
+
+	@include phones-small {
+		line-height: 24px;
+		margin-bottom: 19px;
+
+		& span {
+			display: inline;
+		}
+	}
 }
 
 .footer__social {
 
-    .social__list {
-        padding-top: 0;
-    } 
+	.social__list {
+		padding-top: 0;
+	}
 
-    .social__item {
-        cursor: pointer;
-        position: relative;
+	.social__item {
+		cursor: pointer;
+		position: relative;
 
-        width: 50px;
-        height: 50px;
+		width: 50px;
+		height: 50px;
 
-        border: 1px solid rgba($white-color, 0.3);
-        border-radius: 50%;
-        margin-right: 5%;
+		border: 1px solid rgba($white-color, 0.3);
+		border-radius: 50%;
+		margin-right: 5%;
 
-        &:hover {
-            border-color: $active-menu-color;
-            transition: .3s;
-            .social__icons {
-                //fill: $active-menu-color;
-                transition: .3s;
-            }
-        }
+		&:hover {
+			border-color: $active-menu-color;
+			transition: .3s;
 
-        @include tablets { 
-            margin-right: 4%;
-        }     
-        
-        @include phones-small {  
-            margin-right: 8%;
-        }     
-    }
-    .social__icons {
-        position: absolute;
+			.social__icons {
+				//fill: $active-menu-color;
+				transition: .3s;
+			}
+		}
 
-        fill: rgba($white-color, 0.3);
-        width: 23px;
-        height: 23px;
+		@include tablets {
+			margin-right: 4%;
+		}
 
-        left:50%;
-        top:50%;
-        transform: translate(-50%,-50%);
-    }    
+		@include phones-small {
+			margin-right: 8%;
+		}
+	}
+
+	.social__icons {
+		position: absolute;
+
+		fill: rgba($white-color, 0.3);
+		width: 23px;
+		height: 23px;
+
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
 
 .footer__greatthink {
-    flex: 1;    
+	flex: 1;
 }
 
 .footer__thinker {
-    font-size: 16px;
-    font-style: italic;
-    color: $white-color;
+	font-size: 16px;
+	font-style: italic;
+	color: $white-color;
 
-    @include tablets { 
-        font-size: 14px;
-    }
+	@include tablets {
+		font-size: 14px;
+	}
 }
