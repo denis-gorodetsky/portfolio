@@ -5,10 +5,13 @@
         margin: 0 auto;
     }
 
-    & .menu__link {
+    & .menu__link {        
+
+        &.active,
         &:hover {
             color: $admin-link-color;
             border-bottom-color: $admin-link-color;
+            font-weight: $bold;
         }
 
         @include phones-small {
@@ -19,4 +22,10 @@
     
     background-color: $white-color;
     margin-bottom: 60px;
+}
+
+.menu__link {
+    &:after {
+        content: attr(data-text);
+    }
 }

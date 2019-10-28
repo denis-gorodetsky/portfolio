@@ -4,7 +4,7 @@
       "title": "Лендинг шоколадок Chocco",
       "skills": "HTML, Sass, JavaScript, JQuery, YandexAPI, FlexBox",
       "photo": "slider-image3.jpg",
-      "link": "//rambler.ru",
+      "link": "//google.ru",
       "desc": "Сайт адаптивен. Технологии: OnePageScroll, Api-медиа (работа с видео), Yandex-Maps и форма обратной связи"
     },
     {
@@ -20,7 +20,7 @@
         "title": "Заголовок",
         "skills": "HTML, CSS, JavaScript, JQuery",
         "photo": "slider-image4.jpg",
-        "link": "//rambler.ru",
+        "link": "//google.ru",
         "desc": "Описание"
       }
   ]
