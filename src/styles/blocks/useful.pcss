@@ -1,7 +1,7 @@
 .useful {    
     .title {   
         .title-elem {
-            // text-align: center;  
+            text-align: center;  
 
             @include phones-small {
                 text-align: left;                
@@ -28,7 +28,7 @@
             @include tablets {
                 display: block;
             }
-        }
+        }        
     }
 
     margin-bottom: 139px;
@@ -47,46 +47,28 @@
     }
 }
 
-.useful__text {
-    display: flex;
-    justify-content: center;
-}
-
-.useful__title {
-    display: flex;
-    flex-direction: column;
-    width: 41%;
-
-    @include desktop {
-        width: 50%;
-    }
-
-    @include tablets {
-        width: 60%;
-    }
-
-    @include phones-small {
-        width: 100%;
-    }
-
-}
-
 .useful__description {
     font-weight: $semi-bold;
     line-height: 30px;
     color: rgba($light-color, 0.4);
-    width: 118%;
+    padding: 0 27%;
+    margin-left: 7%;   
 
-    margin-bottom: 10%;
+    margin-bottom: 5.4%;
 
     @include desktop {
         margin-bottom: 85px;
+
+        padding:0 20%;
         line-height: 30px;
     }
 
     @include tablets {
+        text-align: center;
+        
         margin-bottom: 49px;
-        line-height: 24px;
+        padding: 0 12%;
+        line-height: 24px;        
     }
 
     @include phones-small {
@@ -94,7 +76,5 @@
         padding: 0;
         margin-bottom: 48px;
         margin-left: 0;
-        width: 100%;
-
     }
 }

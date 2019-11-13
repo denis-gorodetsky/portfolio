@@ -1,0 +1,17 @@
+
+
+.social
+    ul.social__list
+        - var socials = ['insta', 'vk', 'github'];
+        each social in socials
+            li.social__item
+                - var soclink = ''                          
+                case social
+                    when 'insta'
+                        - soclink='//instagram.com'
+                    when 'vk'
+                        - soclink='//vk.com/denisgorodetsky'
+                    when 'github'
+                        - soclink='//github.com/denis-gorodetsky'
+                a(href=`${soclink}` target="blank").social__link
+                    +icon(social, 'social__icons') 
