@@ -17,7 +17,7 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.1",
     "acorn": "^6.0.5",
-    "autoprefixer": "^9.4.8",
+    "autoprefixer": "^9.7.1",
     "babel-loader": "^8.0.5",
     "babel-preset-vue": "^2.0.2",
     "clean-webpack-plugin": "^2.0.1",
@@ -52,7 +52,7 @@
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.0"
   },
-  "browserslist": [
+  "overrideBrowserslist": [
     "last 2 versions"
   ],
   "dependencies": {
