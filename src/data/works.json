@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "title": "Лендинг шоколадок Chocco",
+      "skills": "HTML, Sass, JavaScript, JQuery, YandexAPI, FlexBox",
+      "photo": "slider-image3.jpg",
+      "link": "//google.ru",
+      "desc": "Сайт адаптивен. Реализованы технологии: OnePageScroll, Api-медиа (работа с видео), Yandex-Maps и форма обратной связи"
+    },
+    {
+      "id": 2,
+      "title": "Сайт фитнес-клуба Afrodita",
+      "skills": "HTML, CSS",
+      "photo": "slider-image1.jpg",
+      "link": "//google.com",
+      "desc": "Это первый проект"
+    },
+    {
+        "id": 4,
+        "title": "Заголовок",
+        "skills": "HTML, CSS, JavaScript, JQuery",
+        "photo": "slider-image4.jpg",
+        "link": "//google.ru",
+        "desc": "Описание"
+      }
+  ]

@@ -89,14 +89,15 @@
                 fill:$active-menu-color;
             }
         }
-    }
-    .navigation__button-icon,
-    & .no-active .navigation__button-icon {
-        fill: $slider-button;
-    }    
+
+        .navigation__button-icon,
+        &:focus .navigation__button-icon {
+            fill: $slider-button;
+        }  
+    }      
 }
 
-// ------- review__block ---------
+//------- review__block ---------
 
 .review__block {
     overflow: hidden;
@@ -112,12 +113,12 @@
 }
 
 .review__list {
-    display: flex;
+    //display: flex;
     will-change: transform;
 }
 
 .review__item {
-    position: relative;
+    //position: relative;
 
     width: 48%;
     display: flex;
@@ -125,15 +126,19 @@
     flex-shrink: 0;
 
     @include tablets { 
-        width: 40%;
-        margin-left: 5%;
-    } 
-
-    @include phones-small { 
+        // width: 100%;
+        // margin-left: 5%;
         padding: 0;
         width: 100%;
         flex-shrink: 0;
         flex-basis: auto;
+    } 
+
+    @include phones-small { 
+        // padding: 0;
+        // width: 100%;
+        // flex-shrink: 0;
+        // flex-basis: auto;
     } 
 
     &:before {
@@ -179,7 +184,7 @@
     color: rgba($light-color, 0.5);
     line-height: 30px;
 
-    width: 85%;
+    //width: 85%;
 
     margin-bottom: 5%;
 
@@ -191,7 +196,7 @@
         font-weight: $semi-bold;
         font-size: 14px;
         line-height: 24px;
-        width: 100%;
+        //width: 100%;
 
         
         // скрытие строк текста
@@ -209,7 +214,7 @@
     } 
 }
 
-// ------ review-avatar ------
+//------ review-avatar ------
 
 .avatar--review {
     display: inline-block;
